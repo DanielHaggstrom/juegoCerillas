@@ -21,6 +21,10 @@ public:
 	static GraphInter* get();
 	static void close();
 	static void load();
+	
+	int modeMenu();
+	int difficulty();
+	int move();
   
 	std::string center_word(std::string word, int length, std::string arround);
   
