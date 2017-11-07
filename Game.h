@@ -1,15 +1,20 @@
-#pragma once
+#ifndef GAME
+#define GAME
 
-class Game{
+class Game
+{
+private:
+	
 	int cerillas; // numero de cerillas iniciales
-
-
-
+	
+	void actualizar(int movimiento);
+	bool validMove(int move);
+	
+	
 public:
 
-	int cerillasRestantes(int cerillas, int movimiento);
+	Game(int cerillasIni): cerillas(cerillasIni) {};
 
-	Game();
-
-	void funcionPrincipal(int cerillas);
+	void Single(Game game);
+	void Double(Game game);
 };
