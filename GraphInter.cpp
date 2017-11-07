@@ -80,6 +80,41 @@ void GraphInter::load()
 	}
 }
 
+int GraphInter::modeMenu()
+{
+	std::vector<std::string> elems;
+	
+	elems.push_back("Single");
+	elems.push_back("Double");
+	
+	return menu(elems);
+}
+
+int GraphInter::difficulty()
+{
+	std::vector<std::string> elems;
+	
+	elems.push_back("Facil");
+	elems.push_back("Dificil");
+	elems.push_back("Experto");
+	
+	return menu(elems);
+}
+
+int GraphInter::move()
+{
+	std::vector<std::string> elems;
+	
+	for(int i = 1; i <= 3; i++)
+	{
+		if(i == 1) elems.push_back("Quitar " + i + " cerilla");
+		
+		else elems.push_back("Quitar " + i + " cerilla");
+	}
+	
+	return (menu(elems) + 1);
+}
+
 std::string GraphInter::center_word(std::string word, int length, std::string arround)
 {
 	if (word.size() < length)
