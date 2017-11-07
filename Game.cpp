@@ -1,21 +1,18 @@
 #include "Game.h"
 
-int Game::cerillasRestantes(int cerillas, int movimiento) {
-		return (cerillas - movimiento);
+bool Game::validMove(int move)
+{
+	if(cerillas >= move) reuturn true;
+	
+	else return false;
 }
 
-Game::Game() {
-	cerillas = 0; // numero defauls de cerillas
+void Game::actualizar(int move)
+{
+	cerillas -= move
 }
 
-void Game::funcionPrincipal(int cerillas) { // funcion donde ocurre el juego en si
-	int round = 0; // This is the current round that is being played. Initilize in 0 to start in 1.
-	while (cerillas > 0) {
-		round++;
-		/*
-		player = getPlayer(round);
-		int movimiento = getMovimiento(player);
-		cerillas = cerillasRestantes(cerillas, movimiento);
-		*/
-	}
+void Game::Single(Game game) 
+{ // funcion donde ocurre el juego en si
+	
 }
