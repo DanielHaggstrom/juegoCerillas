@@ -24,9 +24,10 @@ public:
 	
 	int modeMenu();
 	int difficulty();
-	int move();
+	int playermove(std::string player);
   
 	std::string center_word(std::string word, int length, std::string arround);
+	std::string validUser(Turno jugador);
   
 	std::string linea();
 	void clearConsole();
