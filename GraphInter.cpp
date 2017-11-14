@@ -101,18 +101,70 @@ int GraphInter::difficulty()
 	return menu(elems);
 }
 
-int GraphInter::move()
+int GraphInter::playermove(std::string user)
 {
 	std::vector<std::string> elems;
 	
+	std::sout << "Tu turno, " << user << ", cuantas cerillas quieres quitar?:"
+	
 	for(int i = 1; i <= 3; i++)
 	{
-		if(i == 1) elems.push_back("Quitar " + i + " cerilla");
-		
-		else elems.push_back("Quitar " + i + " cerilla");
+		if(game->validMove(i))
+		{
+			if(i == 1) elems.push_back("Quitar " + i + " cerilla");
+
+			else elems.push_back("Quitar " + i + " cerillas");
+		}
 	}
 	
 	return (menu(elems) + 1);
+}
+
+std::string GraphInter::validUser(Turno jugador)
+{
+	std::string name = "";
+	int i;
+	
+	do
+	{
+		switch(jugador)
+		{
+			case Jugador:
+				std::cout << "Bienvenido jugador, como te llamas:";
+				break;
+			case Jugador1:
+				std::cout << "Bienvenido jugador 1, como te llamas:";
+				break;
+			case Jugador2:
+				std::cout << "Bienvenido jugador 2, como te llamas:";
+				break;
+		}
+		std::cin >> name;
+		
+		if(name == "") std::cout << "Error, debes introducir un nombre" << std::endl;
+		
+		else if(name[0] < 65 || name[0] > 90)
+		{
+			std::cout << "Error, el nombre debe empezar por mayúscula" << std::endl;
+			name = "";
+		}
+		else
+		{
+			i = 1;
+
+			while(i < name.size() && name != "")
+			{
+				if(name[i] < 97 || name[i] > 122)
+				{
+					std::cout << "Error, el nombre debe estar formado por letras inusculas (excepto la primera)" << std::endl;
+					name = "";
+				}
+				i++;
+			}
+		}
+	} while(name == "");
+	
+	return name;
 }
 
 std::string GraphInter::center_word(std::string word, int length, std::string arround)
