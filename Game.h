@@ -10,6 +10,12 @@ private:
 	void actualizar(int movimiento);
 	bool validMove(int move);
 	
+	int digitoAutomata();
+	int botFacil();
+	int botDificil()_;
+	int botImposible();
+	bool minimax(int total, bool turno);
+	
 	
 public:
 
