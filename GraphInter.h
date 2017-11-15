@@ -28,6 +28,8 @@ public:
   
 	std::string center_word(std::string word, int length, std::string arround);
 	std::string validUser(Turno jugador);
+	
+	void mostrarCerillas(int cuantas);
   
 	std::string linea();
 	void clearConsole();
