@@ -167,6 +167,32 @@ std::string GraphInter::validUser(Turno jugador)
 	return name;
 }
 
+void GraphInter::mostrarCerillas(int cuantas)
+{
+	if (cuantas <= 5)
+	{
+		for(int i = 1; i <= cuantas; i++)
+		{
+			std::cout << "* ";
+		}
+	}
+	else
+	{
+		for(int i = 1; i <= cuantas - 5; i++)
+		{
+			std::cout << " *";
+		}
+		std::cout << std::endl;
+		
+		for(int j = 1; j <= 5; j++)
+		{
+			std::cout << "* ";
+		}
+		
+		std::cout << std::endl;
+	}
+}
+
 std::string GraphInter::center_word(std::string word, int length, std::string arround)
 {
 	if (word.size() < length)
