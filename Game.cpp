@@ -2,7 +2,7 @@
 
 bool Game::validMove(int move)
 {
-	if(cerillas >= move) reuturn true;
+	if(cerillas >= move) return true;
 	
 	else return false;
 }
