@@ -32,7 +32,7 @@ int Game::BotDificil(int restantes)
 		
 		else
 		{
-			for(int i = 1; i <= 3)
+			for(int i = 1; i <= 3; i++)
 			{
 				if((restantes - i) == 4) return i;
 			}

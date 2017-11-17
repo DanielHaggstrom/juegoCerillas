@@ -12,7 +12,7 @@ private:
 	
 	int digitoAutomata();
 	int botFacil();
-	int botDificil()_;
+	int botDificil();
 	int botImposible();
 	bool minimax(int total, bool turno);
 	
