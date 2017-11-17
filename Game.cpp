@@ -45,7 +45,7 @@ int Game::botImposible()
 {
 	int move = 0;
 	
-	for(int i = 1; i <= 3)
+	for(int i = 1; i <= 3; i++)
 	{
 		if(validMove(i))
 		{
@@ -55,7 +55,7 @@ int Game::botImposible()
 	return botDificil();
 }
 
-bool Game::minimax(int move, int total, bool turno)
+bool Game::minimax(int move, int total, bool turno) // No encaja con la declaración en el header
 {
 	if(total <= 0) return turno;
 	

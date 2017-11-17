@@ -1,6 +1,8 @@
 #ifndef GRAPHINTER
 #define GRAPHINTER
 
+#include <vector>
+
 class GraphInter
 {
 private:
