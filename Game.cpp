@@ -49,13 +49,13 @@ int Game::botImposible()
 	{
 		if(validMove(i))
 		{
-			if(minimax(i, cerillas, true)) return i;
+			if(minimax(cerillas - i, true)) return i;
 		}
 	}
 	return botDificil();
 }
 
-bool Game::minimax(int move, int total, bool turno) // No encaja con la declaración en el header
+bool Game::minimax(int total, bool turno)
 {
 	if(total <= 0) return turno;
 	
@@ -66,7 +66,7 @@ bool Game::minimax(int move, int total, bool turno) // No encaja con la declarac
 		
 		while(i <= 3 &&!bestValue)
 		{
-			if(validMove(i) bestValue = minimax(i, total - i, false);
+			if(validMove(i)) bestValue = minimax(total - i, false);
 			
 			i++;
 		}
@@ -79,7 +79,7 @@ bool Game::minimax(int move, int total, bool turno) // No encaja con la declarac
 		
 		while(j <= 3 && worstValue)
 		{
-			if(validMove(i) worstValue = minimax(i, total - i, true);
+			if(validMove(j)) worstValue = minimax(total - j, true);
 			
 			j++;
 		}
